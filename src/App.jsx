@@ -3,7 +3,8 @@ import "./App.css";
 
 export default function App() {
   const [counter, setCounter] = useState(0);
-  
+  const backgroundColor = counter < 0 ? 'blue' : counter > 0 ? 'red' : 'lightgrey'
+    
   const increase = () => {
     setCounter(counter + 1);
   };
@@ -12,10 +13,11 @@ export default function App() {
     setCounter(counter - 1);
   };
 
-  return (
+  
+    return (
     <div className="app">
       <h2>THERMOMETER</h2>
-      <div className="counter-value">{counter}</div>
+      <div className="counter-value" style={{backgroundColor}}>{counter} °C</div>
       <div className="buttons">        
           <button className="red" onClick={() => increase()}>+</button>              
           <button className="blue" onClick={() => decrease()}>-</button>        
