@@ -1,19 +1,25 @@
-import Temperature from './components/temperature/Temperature'
-import Buttons from './components/buttons/Buttons'
+import { useState } from "react";
+import "./App.css";
 
-import './App.css'
-
-function App() {
+export default function App() {
+  const [counter, setCounter] = useState(0);
   
-  return (
-    <>
-     <div>
-      <p>Thermometer</p>
-      <Temperature />
-     </div>
-     <Buttons />
-    </>
-  )
-}
+  const increase = () => {
+    setCounter(counter + 1);
+  };
 
-export default App
+  const decrease = () => {
+    setCounter(counter - 1);
+  };
+
+  return (
+    <div className="app">
+      <h2>THERMOMETER</h2>
+      <div className="counter-value">{counter}</div>
+      <div className="buttons">        
+          <button className="red" onClick={() => increase()}>+</button>              
+          <button className="blue" onClick={() => decrease()}>-</button>        
+        </div>
+    </div>
+  );
+}
