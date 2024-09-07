@@ -3,7 +3,7 @@ import "./App.css";
 
 export default function App() {
   const [counter, setCounter] = useState(0);
-  const backgroundColor = counter < 0 ? 'blue' : counter > 0 ? 'red' : 'lightgrey'
+  const backgroundColor = counter < 0 ? 'blue' : counter > 0 ? 'red' : 'lightgrey';
     
   const increase = () => {
     setCounter(counter + 1);
